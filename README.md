@@ -13,3 +13,6 @@ Face,Text,QRcode,Rectangle detect by CIDetector
 
 ![filter](https://github.com/misuqian/CoreImage-Swift/blob/master/ScreenShot/filter.png)
 ![filter_list](https://github.com/misuqian/CoreImage-Swift/blob/master/ScreenShot/filter_list.png)
+
+#License
+[MIT](https://github.com/misuqian/CoreImage-Swift/blob/master/LICENSE)
