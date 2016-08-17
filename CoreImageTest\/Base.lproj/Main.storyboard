@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mGu-ru-mlo">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--DetectorVC-->
+        <scene sceneID="zaT-iX-MTG">
+            <objects>
+                <viewController storyboardIdentifier="detect" id="ICY-wp-bPi" customClass="DetectorVC" customModule="CoreImageTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xqw-JW-yfP"/>
+                        <viewControllerLayoutGuide type="bottom" id="yFP-oJ-Mxh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pYG-3U-n8d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jobs" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-pO-Bro">
+                                <rect key="frame" x="0.0" y="64" width="320" height="336"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-vh-bjM">
+                                <rect key="frame" x="10" y="408" width="300" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="wdg-6S-Xv4">
+                                        <variation key="heightClass=compact" constant="80"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5wh-pO-Bro" firstAttribute="top" secondItem="xqw-JW-yfP" secondAttribute="bottom" id="3OT-8l-mpb"/>
+                            <constraint firstAttribute="trailing" secondItem="YlN-vh-bjM" secondAttribute="trailing" constant="10" id="J3V-z9-yJO"/>
+                            <constraint firstItem="YlN-vh-bjM" firstAttribute="top" secondItem="5wh-pO-Bro" secondAttribute="bottom" constant="8" id="Uc8-t5-9U7"/>
+                            <constraint firstItem="yFP-oJ-Mxh" firstAttribute="top" secondItem="YlN-vh-bjM" secondAttribute="bottom" id="bLk-mD-oGj"/>
+                            <constraint firstItem="5wh-pO-Bro" firstAttribute="leading" secondItem="pYG-3U-n8d" secondAttribute="leading" id="irP-ke-B3x"/>
+                            <constraint firstItem="YlN-vh-bjM" firstAttribute="leading" secondItem="pYG-3U-n8d" secondAttribute="leading" constant="10" id="o5F-j8-2Y9"/>
+                            <constraint firstAttribute="trailing" secondItem="5wh-pO-Bro" secondAttribute="trailing" id="qmI-Se-MWt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zwn-Me-gmR">
+                        <barButtonItem key="rightBarButtonItem" title="选择照片" id="fvY-q3-R2o">
+                            <connections>
+                                <action selector="chooseImage:" destination="ICY-wp-bPi" id="dJG-3c-z9D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="5wh-pO-Bro" id="EZ0-af-tqn"/>
+                        <outlet property="textView" destination="YlN-vh-bjM" id="fLm-Cg-qhp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMU-WW-CXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="-331"/>
+        </scene>
+        <!--CoreImageDemo-->
+        <scene sceneID="of4-XP-oP6">
+            <objects>
+                <tableViewController id="cyS-77-9Pl" customClass="MainTVC" customModule="CoreImageTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mJD-sh-h3A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LAm-jX-h1N">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LAm-jX-h1N" id="RMR-ZI-Zn1">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cyS-77-9Pl" id="P0S-vy-zpa"/>
+                            <outlet property="delegate" destination="cyS-77-9Pl" id="7va-J3-5oZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CoreImageDemo" id="m3r-c1-ip6">
+                        <barButtonItem key="backBarButtonItem" title="首页" id="POZ-f4-Oyb"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="0y6-9e-F1J" kind="show" identifier="filter" id="71D-2O-dd5"/>
+                        <segue destination="ICY-wp-bPi" kind="show" identifier="detect" id="frv-O4-pmd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pmr-t6-uOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="356"/>
+        </scene>
+        <!--Blur SelectVC-->
+        <scene sceneID="svH-yk-2HH">
+            <objects>
+                <viewController storyboardIdentifier="blurSelect" id="YSu-nd-bGh" customClass="BlurSelectVC" customModule="CoreImageTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vla-wV-Je8"/>
+                        <viewControllerLayoutGuide type="bottom" id="rab-Y8-0Jm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JX9-Jq-hrb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PFN-mQ-tiy">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G56-dL-9Ed">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="滤镜选择" id="zzh-UT-xOR">
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="vHM-rG-kvo">
+                                            <connections>
+                                                <action selector="cancel:" destination="YSu-nd-bGh" id="Vte-6u-ZWm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rab-Y8-0Jm" firstAttribute="top" secondItem="PFN-mQ-tiy" secondAttribute="bottom" id="1yU-GH-K8z"/>
+                            <constraint firstItem="PFN-mQ-tiy" firstAttribute="top" secondItem="G56-dL-9Ed" secondAttribute="bottom" id="2mc-mr-cyc"/>
+                            <constraint firstItem="G56-dL-9Ed" firstAttribute="top" secondItem="Vla-wV-Je8" secondAttribute="bottom" id="5XF-wx-dkX"/>
+                            <constraint firstItem="PFN-mQ-tiy" firstAttribute="leading" secondItem="JX9-Jq-hrb" secondAttribute="leading" id="QTh-Rp-Wfh"/>
+                            <constraint firstAttribute="trailing" secondItem="PFN-mQ-tiy" secondAttribute="trailing" id="vXo-cY-5E3"/>
+                            <constraint firstItem="G56-dL-9Ed" firstAttribute="leading" secondItem="JX9-Jq-hrb" secondAttribute="leading" id="w8R-vg-aWS"/>
+                            <constraint firstAttribute="trailing" secondItem="G56-dL-9Ed" secondAttribute="trailing" id="yjM-oR-Hxn"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="PFN-mQ-tiy" id="Jt9-f1-Dbm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rnu-oh-Tf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="-305"/>
+        </scene>
+        <!--CIGaussianBlur-->
+        <scene sceneID="qbh-0e-cEy">
+            <objects>
+                <viewController id="0y6-9e-F1J" customClass="BlurVC" customModule="CoreImageTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wKr-dM-2uo"/>
+                        <viewControllerLayoutGuide type="bottom" id="DP3-4r-USV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uhd-j7-JCq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="gc8-fo-krO" customClass="FilterImageView" customModule="CoreImageTest" customModuleProvider="target">
+                                <rect key="frame" x="10" y="72" width="300" height="180"/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.41176470590000003" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Ebz-Jh-BRx"/>
+                                </constraints>
+                            </glkView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsf-e9-chm">
+                                <rect key="frame" x="10" y="260" width="300" height="300"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gc8-fo-krO" firstAttribute="leading" secondItem="uhd-j7-JCq" secondAttribute="leading" constant="10" id="23d-kY-HYS"/>
+                            <constraint firstItem="gc8-fo-krO" firstAttribute="top" secondItem="wKr-dM-2uo" secondAttribute="bottom" constant="8" id="DCI-fK-97l"/>
+                            <constraint firstItem="Lsf-e9-chm" firstAttribute="top" secondItem="gc8-fo-krO" secondAttribute="bottom" constant="8" id="Nd8-4a-lB2"/>
+                            <constraint firstItem="Lsf-e9-chm" firstAttribute="leading" secondItem="uhd-j7-JCq" secondAttribute="leading" constant="10" id="d07-Xi-ooW"/>
+                            <constraint firstAttribute="trailing" secondItem="gc8-fo-krO" secondAttribute="trailing" constant="10" id="hIh-N6-mmI"/>
+                            <constraint firstAttribute="trailing" secondItem="Lsf-e9-chm" secondAttribute="trailing" constant="10" id="wc3-fM-abn"/>
+                            <constraint firstItem="DP3-4r-USV" firstAttribute="top" secondItem="Lsf-e9-chm" secondAttribute="bottom" constant="8" id="yCh-y5-QCw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="CIGaussianBlur" id="6Ea-n2-JCc">
+                        <barButtonItem key="rightBarButtonItem" title="选择滤镜" id="M20-qu-Ypx">
+                            <connections>
+                                <action selector="selectBlur:" destination="0y6-9e-F1J" id="fuZ-B3-WTK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="gc8-fo-krO" id="bTj-kU-yVA"/>
+                        <outlet property="scrollView" destination="Lsf-e9-chm" id="y8O-iH-0jo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIA-zu-LSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="356"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xz9-DY-as8">
+            <objects>
+                <navigationController id="mGu-ru-mlo" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XmD-Ob-adJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cyS-77-9Pl" kind="relationship" relationship="rootViewController" id="Dtc-yM-8Xj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7w-4H-olr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="356"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="jobs" width="200" height="150"/>
+    </resources>
+</document>
