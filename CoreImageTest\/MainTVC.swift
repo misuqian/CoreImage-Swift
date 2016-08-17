@@ -11,7 +11,7 @@ import UIKit
 //首页界面
 class MainTVC: UITableViewController {
     let headers : [String] = ["图像检测","图片处理"]
-    let datas : [[(String,String)]] = [[("人脸","face"),("矩形","rect"),("文字","text"),("二维码","qrc")],[("滤镜","filter")]]
+    var datas : [[(String,String)]] = [[("人脸","face"),("矩形","rect"),("文字","text"),("二维码","qrc")],[("滤镜","filter")]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,11 @@ class MainTVC: UITableViewController {
         label.textAlignment = .Center
         label.text = "By misupeng"
         self.tableView.tableFooterView = label
+        
+        let os = NSProcessInfo().operatingSystemVersion
+        if os.majorVersion < 9{
+            datas = [[("人脸","face"),("矩形","rect"),("二维码","qrc")],[("滤镜","filter")]]
+        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

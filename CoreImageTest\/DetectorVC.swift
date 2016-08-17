@@ -167,23 +167,25 @@ class DetectorVC: UIViewController,UIImagePickerControllerDelegate,UINavigationC
     private func detect_text(){
         AsyncThreadRun({
             let option = [CIDetectorAccuracy:CIDetectorAccuracyHigh] //高准确度
-            let dector = CIDetector(ofType: CIDetectorTypeText, context: nil, options: option)
-            if let cgImage : CGImage = self.imageView.image?.CGImage{
-                let ciImage = CIImage(CGImage: cgImage)
-                let results = dector.featuresInImage(ciImage)
-                var text = ""
-                for i in 0..<results.count{
-                    let txt = results[i] as! CITextFeature
-                    self.addBoundsTip(txt.bounds,inputImageSize: ciImage.extent.size)
-                    text += "【第\(i+1)个文字】\n"
-                    text += "左下:\(txt.bottomLeft)\t右下:\(txt.bottomRight)\n左上:\(txt.topLeft)\t右上:\(txt.topRight)\n"
+            if #available(iOS 9.0, *) {
+                let dector = CIDetector(ofType: CIDetectorTypeText, context: nil, options: option)
+                if let cgImage : CGImage = self.imageView.image?.CGImage{
+                    let ciImage = CIImage(CGImage: cgImage)
+                    let results = dector.featuresInImage(ciImage)
+                    var text = ""
+                    for i in 0..<results.count{
+                        let txt = results[i] as! CITextFeature
+                        self.addBoundsTip(txt.bounds,inputImageSize: ciImage.extent.size)
+                        text += "【第\(i+1)个文字】\n"
+                        text += "左下:\(txt.bottomLeft)\t右下:\(txt.bottomRight)\n左上:\(txt.topLeft)\t右上:\(txt.topRight)\n"
+                    }
+                    if text == ""{
+                        text = "无法检测"
+                    }
+                    MainThreadRun({
+                        self.textView.text = text
+                    })
                 }
-                if text == ""{
-                    text = "无法检测"
-                }
-                MainThreadRun({
-                    self.textView.text = text
-                })
             }
         })
     }
